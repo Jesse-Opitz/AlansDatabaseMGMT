@@ -27,12 +27,12 @@ FROM agents
 WHERE city != 'New York' 
 	AND city != 'Tokyo';
 
---6 All products not in Dallas and Duluth and are less than USD$1
+--6 All products not in Dallas and Duluth and cost USD$1 or more
 SELECT * 
 FROM products 
 WHERE city != 'Dallas' 
 	AND city != 'Duluth'
-	AND priceUSD < 1;
+	AND priceUSD >= 1;
 
 --7 All orders in the month january or march
 SELECT *
