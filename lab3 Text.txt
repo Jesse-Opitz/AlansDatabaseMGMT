@@ -1,0 +1,47 @@
+Jesse Opitz
+Lab 3
+Database Management
+
+--1 order number and total dollars of all orders
+SELECT ordnum, totalUSD 
+FROM orders;
+
+--2 A list of agents named Smith and their city
+SELECT name, city 
+FROM agents
+WHERE name = 'Smith;
+
+--3 List of products pid, name and US dollar price if the quantity is more than 208000
+SELECT pid, name, priceUSD 
+FROM products 
+WHERE quantity > 208000;
+
+--4 List of customers name and city if they live in Dallas
+SELECT name, city 
+FROM customers 
+WHERE city='Dallas';
+
+--5 List of agent names that don't live in New York and Tokyo
+SELECT name 
+FROM agents 
+WHERE city != 'New York' AND city != 'Tokyo';
+
+--6 All products not in Dallas and Duluth and are less than USD$1
+SELECT * 
+FROM products 
+WHERE city != 'Dallas' AND city != 'Duluth' AND priceUSD < 1;
+
+--7 All orders in the month january or march
+SELECT *
+FROM orders
+WHERE mon = 'jan' OR mon = 'mar';
+
+--8 All orders in the month february that are less than USD$500
+SELECT *
+FROM orders
+WHERE mon = 'feb' AND totalUSD < 500;
+
+--9 All orders with the cid C005
+SELECT *
+FROM orders
+WHERE cid = 'C005';
