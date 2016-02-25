@@ -3,9 +3,8 @@
 
 -- 1) Cities of agents booking an order for a 
 -- customer whose id is 'c002'; No subqueries
-SELECT city
-FROM agents,
-     orders
+SELECT agents.city
+FROM agents INNER JOIN orders ON agents.aid=orders.aid
 WHERE orders.cid = 'c002';
 
 
